@@ -1,0 +1,18 @@
+{
+  "icons": [
+    {
+      "src": "./icon_500x500.4db358a0c3f7ab4a52dc409ff45974da.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "name": "PWA-Text-Editor",
+  "short_name": "PWA-TextEdit",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./",
+  "description": "Take notes with Javascript syntax highlighting!",
+  "background_color": "#31a9e1",
+  "theme_color": "#166e5cda"
+}

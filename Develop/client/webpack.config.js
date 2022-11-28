@@ -18,7 +18,7 @@ module.exports = () => {
 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin',
+        title: 'JATE',
       }),
       
       new InjectManifest({
@@ -28,12 +28,13 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         inject: true,
+        name: 'PWA-Text-Editor',
+        short_name: 'PWA-TextEdit',
+        description: 'Take notes with Javascript syntax highlighting!',
+        background_color: '#31a9e1',
+        theme_color: '#166e5cda',
         start_url: './',
         publicPath: './',
-        name: 'PWA Text Editor',
-        short_name: 'PWA-TextEdit',
-        description: 'Just Another Text Editor',
-        background_color: '#31a9e1',
         crossorigin: 'use-credentials',
         icons: [
           {
@@ -57,7 +58,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {

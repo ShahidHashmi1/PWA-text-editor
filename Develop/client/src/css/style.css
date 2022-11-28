@@ -8,6 +8,10 @@
   --navbar-height: 50px;
 }
 
+nav {
+  color: #166e5cda;
+}
+
 body {
   margin: 0;
   background-color: var(--monoaki);

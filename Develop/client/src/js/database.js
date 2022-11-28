@@ -1,4 +1,3 @@
-import { text } from 'express';
 import { openDB } from 'idb';
 const header = require('./header');
 
@@ -19,9 +18,9 @@ export const putDb = async (id) => {
   console.log('PUT to the database');
   console.error('putDb not implemented')
   const jateDb = await openDB('jate', 1);
-  const tx = jateDb.transaction('jate', 'readwrite');
-  const store = tx.objectStore('jate');
-  const request = store.put({ header: header, text: id });
+  const transaction = jateDb.transaction('jate', 'readwrite');
+  const store = transaction.objectStore('jate');
+  const request = store.put({ text: id });
   const result = await request;
   console.log('data saved to the database:', result);
   return result;
@@ -32,8 +31,8 @@ export const getDb = async () => {
   console.log('GET ALL:', 'GET all from the database.')
   console.error('getDb not implemented');
   const jateDb = await openDB('jate', 1);
-  const tx = jateDb.transaction('jate', 'readonly');
-  const store = tx.objectStore('jate');
+  const transaction = jateDb.transaction('jate', 'readonly');
+  const store = transaction.objectStore('jate');
   const request = store.getAll();
   const result = await request;
   console.log('result.value', result);
