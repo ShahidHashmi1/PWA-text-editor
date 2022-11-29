@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+// const header = require('./src/js/header');
 
 module.exports = () => {
   return {
@@ -27,6 +28,7 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
+        fingerprints: false,
         inject: true,
         name: 'PWA-Text-Editor',
         short_name: 'PWA-TextEdit',
@@ -38,11 +40,12 @@ module.exports = () => {
         crossorigin: 'use-credentials',
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
-            size: '500x500',
-            purpose: 'maskable'
-          }
-        ]
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+            // maskable: true,
+          },
+        ],
       })
     ],
 
