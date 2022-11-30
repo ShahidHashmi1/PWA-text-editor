@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-// const header = require('./src/js/header');
 
 module.exports = () => {
   return {
@@ -30,20 +29,24 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
+        ios: {
+          'apple-touch-icon': 'JATE',
+          'apple-mobile-web-app-capable': true
+        },
         name: 'PWA-Text-Editor',
         short_name: 'PWA-TextEdit',
         description: 'Take notes with Javascript syntax highlighting!',
         background_color: '#31a9e1',
-        theme_color: '#166e5cda',
+        theme_color: '#31a9e1',
         start_url: './',
         publicPath: './',
         crossorigin: 'use-credentials',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
+            sizes: [96, 128, 144, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
-            // maskable: true,
+            purpose: 'maskable'
           },
         ],
       })
