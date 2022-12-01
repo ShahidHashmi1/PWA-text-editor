@@ -34,3 +34,6 @@ WHEN I deploy to Heroku
 THEN I should have proper build scripts for a webpack application
 ```
 
+## Fully-Deployed-Link
+<a href="https://txt-editor-pwa.herokuapp.com/">Deployed URL</a>
+
