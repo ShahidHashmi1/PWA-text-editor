@@ -1,5 +1,8 @@
 # PWA-text-editor
 
+## Description
+This project is a simple text-editor that utilizes service worker to create a progressive web application. It is deployed to the heroku domain (link provided below) and meets lighthouse criteria. It is installable for offline via the install button element, or the browser install icon.
+
 ```ruby
 AS A developer
 I WANT to create notes or code snippets with or without an internet connection
